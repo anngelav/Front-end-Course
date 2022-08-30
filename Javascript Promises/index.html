@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Promises</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        //let car = new Promise(function (resolve, reject) {
+        //    fuel_fullTank = true;
+        //    if (fuel_fullTank) {
+        //        resolve();
+        //    } else {
+        //        reject();
+        //    }
+        //});
+        //car.then(function () {
+        //    document.write("The fuel tank is full. Happy driving");
+        //}).catch(function () {
+        //    document.write("The fuel tank is not empty");
+        //})
+
+        let empty_tank = function () {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "The car doesn't have enought fuel.");
+            });
+        };
+
+        let engine = function (msg) {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "The engine is over heating.");
+            });
+        };
+
+        let travel = function (msg) {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "The car is not safe for trvelling.");
+            });
+        };
+
+        empty_tank().then(function (result) {
+            return engine(result);
+        }).then(function (result) {
+            return travel(result);
+        }).then(function (result) {
+            console.log("Done!" + result);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Form Validation</title>
+</head>
+<body>
+    <form action="message.html" name="myForm" onsubmit="return (Validate());">
+        <input name="Email" placeholder="Email" type="text" />
+        <input name="Password" placeholder="Password" type="text" /><br />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script type="text/javascript">
+        function Validate() {
+            if (document.myForm.Email.value == "") {
+                alert("Please provide your Email ID");
+                document.myForm.Email.focus();
+                return false;
+            } else if (document.myForm.Password.value == "") {
+                alert("Please provide your Password");
+                document.myForm.Password.focus();
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

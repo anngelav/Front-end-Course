@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript object methods</title>
+</head>
+<body>
+    <h1>Javascript Object Methods</h1>
+    <p id="demo"></p>
+    <button id = "click me">Click Me</button>
+    <button id="see my age">Click me to see my age</button>
+    <script>
+        let user = {
+            name: "Angela",
+            age: 21,
+        };
+        function sayHi() {
+            alert("Hello!");
+        }
+        function myAge() {
+            alert("My age is " + user.age);
+        }
+        user.message = sayHi;
+        user.messageAge = myAge;
+        document.getElementById("demo").innerHTML = "Hi " + user.name + "!";
+        document.getElementById("click me").onclick = user.message;
+        document.getElementById("see my age").onclick = user.messageAge;
+    </script>
+</body>
+</html>

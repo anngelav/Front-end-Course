@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Asinc/Await</title>
+</head>
+<body>
+    <h1>JavaScript Asinc/Await</h1>
+
+    <!--"this" references global variable-->
+    <!--<script>
+        var value = 50;
+
+        function MyFunc() {
+            var value = 100;
+            //show message about variable in the function 
+            alert("Value " + value);
+
+            //show message about global variable ("this" references global variable)
+            alert("This value " + this.value);
+        }
+
+        MyFunc();
+    </script>-->
+
+
+    <!--"this references object property"-->
+    <!--<script>
+        const random = {
+            name: "Angela",
+            info() {
+                console.log("Hi! My name is " + this.name);
+            },
+        }
+        random.info();
+    </script>-->
+
+    <!--references object-->
+    <script>
+        const random = {
+            name: "Tutorial",
+            video: ["JavaScript", "This", "Keyword"],
+            info() {
+                this.video.forEach(function (tag) {
+                    console.log(this.name, tag);
+                },this)
+            },
+        }
+        random.info();
+    </script>
+</body>
+</html>

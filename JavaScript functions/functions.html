@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript functions</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //simple function
+        function func1(val) {
+            document.getElementById("demo").innerHTML = val * val;
+        }
+        func1(5);
+
+        //function expression (function stored into a variable)
+        let func2 = function () {
+            alert("Hello!");
+        }
+        document.getElementById("demo").innerHTML = func2();
+
+        //function constructor (using the built-in Javascript function)
+        var func3 = new Function("a", "b", "return a+b");
+        var x = func3(2, 3);
+        document.getElementById("demo").innerHTML = "The sum is " + x;
+
+        //Self-invoking functions (functions that work without being called)
+        (function () {
+            alert("Hello dear!");
+        })()
+
+        //functions as values (we can deal with it as a value)
+        function func5(a, b) {
+            return a * b;
+        }
+        let y = func5(2, 3)*5;
+        document.getElementById("demo").innerHTML = "The product is " + y;
+
+        //functions as objects (a string which holds the actual code)
+        var body = "return Math.PI * rad * rad";
+        var func6 = new Function("rad", body);
+        alert(func6(5));
+
+        //arrow functions (suited as methods, and cannot be used as constructors)
+        const func7 = (a, b, c) => { return a * b * c };
+        let product = func7(2, 3, 4);
+        document.getElementById("demo").innerHTML = "The product of the three digits is " + product;
+
+        //generator functions (can return multiple values)
+        function* func8() {
+            yield 1;
+            yield 2;
+            return 3;
+        }
+        let generator = func8();
+        let one = generator.next();
+        let two = generator.next();
+        let three = generator.next();
+        alert(JSON.stringify(one));
+        alert(JSON.stringify(two));
+        alert(JSON.stringify(three));
+    </script>
+</body>
+</html>

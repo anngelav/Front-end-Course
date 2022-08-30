@@ -1,0 +1,8 @@
+﻿body
+{
+    background-image: url(img.jpg);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #8DB5ED;
+    background-blend-mode: screen;
+}
